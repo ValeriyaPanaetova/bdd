@@ -17,7 +17,7 @@ public class TransactionPage {
         sumAmount.setValue(valueOf(amount));
         fromAccount.setValue(String.valueOf(from));
         clickReplenish.click();
-        new CardBalance();
+
     }
 
     public void errorLimit() {
