@@ -27,13 +27,12 @@ public class MoneyTransferTest {
 
     @Test
     public void shouldTransferFrom1To2() {
-        int amount = 7000;
+        int amount = 70000;
         val cardBalance = new CardBalance();
         val firstCardBalanceStart = cardBalance.getFirstCardBalance();
         val secondCardBalanceStart = cardBalance.getSecondCardBalance();
-        Object transactionPage;
-        transactionPage = cardBalance.pushSecondCardButton();
-        ((TransactionPage) transactionPage).transferMoney(amount, getFirstCardNumber());
+        val transactionPage = cardBalance.pushSecondCardButton();
+        transactionPage.transferMoney(amount, getFirstCardNumber());
         val firstCardBalanceFinish = firstCardBalanceStart - amount;
         val secondCardBalanceFinish = secondCardBalanceStart + amount;
         assertEquals(firstCardBalanceFinish, cardBalance.getFirstCardBalance());
